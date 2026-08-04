@@ -1,14 +1,12 @@
-﻿
-using PlayerTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 
-namespace Testcalc
+namespace Tests
 
 {
-    public class PlayerTests
+    public class Tests
     {
 
         [Fact]
