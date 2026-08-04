@@ -4,7 +4,16 @@ using System.Text;
 
 namespace XpTdd.Models
 {
-    internal class Goblin
+    public class Goblin
     {
+        public int XpReward { get; set; }
+
+        public int Health { get; set; }
+
+        public Goblin(int xpReward, int health)
+        {
+            XpReward = xpReward;
+            Health = health;
+        }
     }
 }
