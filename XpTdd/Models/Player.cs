@@ -16,8 +16,9 @@ namespace XpTdd.Models
 
         public Weapon? EquipedWeapon { get; private set; }
 
-        public void GainXp(int Xp)
+        public void GainXp(int amount)
         {
+            Xp += amount;
             while (Xp >= 100)
             {
                 Xp -= 100;
