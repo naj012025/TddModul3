@@ -10,10 +10,17 @@ namespace XpTdd.Models
 
         public int Health { get; set; }
 
+        public bool Isdead => Health <= 0;
+
         public Goblin(int xpReward, int health)
         {
             XpReward = xpReward;
             Health = health;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            Health -= damage;
         }
     }
 }

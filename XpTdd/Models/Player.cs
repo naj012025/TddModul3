@@ -1,4 +1,4 @@
-﻿u
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +10,11 @@ namespace XpTdd.Models
         public string? Name { get; set; }
         public int Level { get; private set; } = 1;
         public int Xp { get; private set; }
+        public int Health { get; private set; }
+
+        public bool Isdead => Health <= 0;
+
+        public Weapon? EquipedWeapon { get; private set; }
 
         public void GainXp(int Xp)
         {
@@ -18,6 +23,16 @@ namespace XpTdd.Models
                 Xp -= 100;
                 Level++;
             }
+        }
+
+        public void EquipWeapon(Weapon weapon)
+        {
+            EquipedWeapon = weapon;
+        }
+
+        public void Attack(Goblin goblin)
+        {
+            goblin.TakeDamage(EquipedWeapon!.Damage);
         }
     }
 }

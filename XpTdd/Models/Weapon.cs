@@ -15,5 +15,7 @@ namespace XpTdd.Models
             Name = name;
             Damage = damage;
         }
+
+
     }
 }
