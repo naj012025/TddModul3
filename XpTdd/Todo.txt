@@ -1,0 +1,18 @@
+﻿1. Husk i method som i gain xp at du setter Gainxp(Ting her for ex. int amount)
+{
+Xp = amount;
+}
+Ellers vil det ikke tell pga det er ikke en ting.
+
+while loop sjekker i dette tilfelle at xp er mer en 100 da fjerner den 100 fra counter og gir meg en level 
+
+2.
+public bool =>Health<=0; Skrives sånn bool peker på health og sjekker om den er 0 med denne =>text<=Value;
+
+
+3.
+lag ny prosjekt webapi og legg til ref via add de to forige prosj 
+lag excalidraw 
+
+
+

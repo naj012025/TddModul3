@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using XpTdd.Models;
+
 namespace Tests
 {
     public class PlayerTests

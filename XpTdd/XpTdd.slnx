@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../TddApi/TddApi.csproj" Id="e136e989-9249-48bf-a7cd-3db7f6763444" />
   <Project Path="../Tests/Tests.csproj" Id="42a5a02d-488b-43ee-bbc8-12d1fb377519" />
   <Project Path="XpTdd.csproj" />
 </Solution>
