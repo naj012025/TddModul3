@@ -1,12 +1,14 @@
 
 
+using TddApi.Controllers;
+using TddApi.Dto;
 using TddApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSingleton<PlayerService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<PlayerService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

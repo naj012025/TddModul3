@@ -1,4 +1,5 @@
 ﻿using XpTdd.Models;
+
 namespace TddApi.Services
 {
     public class PlayerService
@@ -16,4 +17,6 @@ namespace TddApi.Services
             _player.GainXp(amount);
             return _player;
         }
+
     }
+}

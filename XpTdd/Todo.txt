@@ -11,7 +11,9 @@ public bool =>Health<=0; Skrives sånn bool peker på health og sjekker om den e
 
 
 3.
-lag ny prosjekt webapi og legg til ref via add de to forige prosj 
+lag ny prosjekt webapi og legg til ref via add de to forige prosj complete
+Finne ut hvorfor ikke den vil kjøre testen i testing har sjekket route har sjekket spelling og sjekke project ref at det er riktig 
+men fortsatt ingenting.
 lag excalidraw 
 
 

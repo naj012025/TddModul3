@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TddApi\TddApi.csproj" />
-	  <ProjectReference Include="..\XpTdd\XpTdd.csproj" />
+    <ProjectReference Include="..\XpTdd\XpTdd.csproj" />
   </ItemGroup>
 
   <ItemGroup>

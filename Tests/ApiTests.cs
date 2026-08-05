@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using TddApi;
+using TddApi.Controllers;
+using TddApi.Dto;
+using TddApi.Services;
+using XpTdd.Models;
 using Xunit;
 namespace Tests
 {
@@ -22,7 +25,7 @@ namespace Tests
         {
             HttpResponseMessage response =
                 await _client.PostAsync(
-                    "/TddApi/players/gain-xp?amount=150",
+                    "/api/player/gain-xp?amount=150",
                     content: null);
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
