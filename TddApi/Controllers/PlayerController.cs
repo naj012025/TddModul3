@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TddApi.Dto;
 using TddApi.Services;
-using XpTdd.Models;
 namespace TddApi.Controllers
 {
     [ApiController]
