@@ -1,8 +1,8 @@
 
-
 using TddApi.Controllers;
 using TddApi.Dto;
 using TddApi.Services;
+using XpTdd.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.

@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TddApi.Dto;
 using TddApi.Services;
+using XpTdd.Models;
 namespace TddApi.Controllers
 {
     [ApiController]
-    [Route("/api/player")]
+    //jeg hadde feil routing hadde /i begynnelsen.
+    [Route("api/player")]
     public class PlayerController : ControllerBase
     {
         private readonly PlayerService _playerService;
@@ -13,8 +15,8 @@ namespace TddApi.Controllers
         {
             _playerService = playerService;
         }
-
-        [HttpPost]
+        //hadde glemt og legge til "gain-xp" i samme line som httppost i parantes 
+        [HttpPost("gain-xp")]
         public ActionResult<PlayerResponse> GainXp(int amount)
         {
             var player = _playerService.GainXp(amount);
