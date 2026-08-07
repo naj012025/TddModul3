@@ -8,6 +8,7 @@ namespace XpTdd.Models
 {
     public class Player
     {
+        public int Id { get; set; }
         public string? Name { get; set; }
         public int Level { get; private set; } = 1;
         public int Xp { get; private set; }
