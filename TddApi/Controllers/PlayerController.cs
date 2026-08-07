@@ -16,16 +16,42 @@ namespace TddApi.Controllers
         }
         //hadde glemt og legge til "gain-xp" i samme line som httppost i parantes 
         [HttpPost("gain-xp")]
-        public ActionResult<PlayerResponse> GainXp(int amount)
+        public ActionResult<PlayerResponse> GainXp(GainXpRequest request)
         {
-            var player = _playerService.GainXp(amount);
+            // <=0; betyr less than eller er lik 0 
+            if (request.Amount <= 0)
+                return BadRequest("Xp amount needs to be more than 0");
 
+            var player = _playerService.GainXp(request.Amount);
+            //antar i return ok in this case etter playerresponse må jeg alltid ha
+            // enten () eller {} etc inne i Parantes new playerresponece ellers red line.
+            return Ok(new PlayerResponse
+            {
+                Level = player.Level,
+                Xp = player.Xp
+            });
+
+
+
+
+
+
+
+        }
+
+
+        [HttpGet]
+        public ActionResult<PlayerResponse> GetPlayer()
+        {
+            var player = _playerService.GetPlayer();
+            //Husk Liten o etter O i Ok eller får du error.
             return Ok(new PlayerResponse
             {
                 Level = player.Level,
                 Xp = player.Xp
             });
         }
+
 
     }
 

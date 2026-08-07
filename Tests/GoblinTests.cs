@@ -5,14 +5,14 @@ using XpTdd.Models;
 
 namespace Tests
 {
-    public class GoblinTests
-    {
-        [Fact]
-        //given when then
-        //Test here
+    //public class GoblinTests
+    //{
+    //    [Fact]
+    //    //given when then
+    //    //Test here
 
-        //Arrange
-        //Act
-        //Assert
-    }
+    //    //Arrange
+    //    //Act
+    //    //Assert
+    //}
 }
