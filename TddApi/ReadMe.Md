@@ -8,3 +8,7 @@ Controllers handles Http/Dto/ Requests shapes
 Services Coordinates app behavior 
 Logic is from XpTdd.
 Api handles the logic from Xptdd into TddApi.
+
+Hadde feil i test pga jeg added AsJsonAsync i testene så den behold
+player i begge testene når jeg brukte singleton så fikk alt for mye 
+xp i test så den feilet.

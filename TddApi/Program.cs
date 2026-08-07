@@ -12,9 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 //Where it say addsingleton it can change to other states 
 //for example:AddTransient or AddScoped:
 builder.Services.AddControllers();
-builder.Services.AddSingleton<PlayerService>();
+//builder.Services.AddSingleton<PlayerService>();
 builder.Services.AddOpenApi();
-//builder.Services.AddScoped<PlayerService>();
+builder.Services.AddScoped<PlayerService>();
 
 var app = builder.Build();
 

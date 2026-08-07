@@ -34,10 +34,14 @@ namespace Tests
         public async Task GainXp_With150Xp_ReturnsLevel2and50RemainingXp()
         {
             //Act
+            GainXpRequest request = new()
+            {
+                Amount = 150
+            };
             HttpResponseMessage response =
-                await _client.PostAsync(
-                    "/api/player/gain-xp?amount=150",
-                    content: null);
+                await _client.PostAsJsonAsync(
+                    "/api/player/gain-xp",
+                    request);
 
             PlayerResponse? player =
                 // no jason yet ?
