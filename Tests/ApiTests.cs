@@ -17,10 +17,15 @@ namespace Tests
         [Fact]
         public async Task GainXp_ReturnSuccess()
         {
+            GainXpRequest request = new()
+            {
+                Amount = 150
+            };
+
             HttpResponseMessage response =
-                await _client.PostAsync(
-                    "/api/player/gain-xp?amount=150",
-                    content: null);
+                await _client.PostAsJsonAsync(
+                    "/api/player/gain-xp",
+                    request);
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
