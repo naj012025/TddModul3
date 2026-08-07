@@ -12,3 +12,5 @@ Api handles the logic from Xptdd into TddApi.
 Hadde feil i test pga jeg added AsJsonAsync i testene så den behold
 player i begge testene når jeg brukte singleton så fikk alt for mye 
 xp i test så den feilet.
+
+Hadde Feil med swagger pga jeg hadde bare installert swagger core uten swagger ui.

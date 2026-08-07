@@ -44,7 +44,6 @@ namespace Tests
                     request);
 
             PlayerResponse? player =
-                // no jason yet ?
                 await response.Content.ReadFromJsonAsync<PlayerResponse>();
             //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

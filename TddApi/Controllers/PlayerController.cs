@@ -9,7 +9,8 @@ namespace TddApi.Controllers
     public class PlayerController : ControllerBase
     {
         private readonly PlayerService _playerService;
-
+        //primary constructor som ide anbefaler gir betydlig mindre boilerplaten
+        //men gir samme resultat.
         public PlayerController(PlayerService playerService)
         {
             _playerService = playerService;
@@ -30,13 +31,6 @@ namespace TddApi.Controllers
                 Level = player.Level,
                 Xp = player.Xp
             });
-
-
-
-
-
-
-
         }
 
 

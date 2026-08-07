@@ -1,5 +1,7 @@
-
 using Microsoft.AspNetCore;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using TddApi.Controllers;
 using TddApi.Dto;
 using TddApi.Services;
@@ -13,7 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 //for example:AddTransient or AddScoped:
 builder.Services.AddControllers();
 //builder.Services.AddSingleton<PlayerService>();
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<PlayerService>();
 
 var app = builder.Build();
@@ -23,6 +27,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    //Openapie/scalar tenker jeg. app.MapOpenApi();
 }
 
 app.UseAuthorization();
@@ -33,9 +40,9 @@ app.Run();
 
 //This public partial class makes it so im able to use the tests.
 //it can stay forever has no effect on slowing down the program.
-public partial class Program
-{
-
-}
+//public partial class Program
+//{
+//    //Denne partial Class er unødvenig i nyere Dotnet
+//}
 
 
