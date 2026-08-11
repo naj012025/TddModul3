@@ -67,6 +67,18 @@ namespace Tests
             //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Fact]
+        public async Task GetGoblin_WhenGoblinDoesNotExist_Return404NotFound()
+        {
+            //Arrange
+            int goblinId = 999;
+            //Act
+            HttpResponseMessage response =
+                await _client.GetAsync("/api/goblin");
+            //Assert
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
     }
 }
 
