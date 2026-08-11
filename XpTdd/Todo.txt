@@ -1,11 +1,4 @@
-﻿1. Husk i method som i gain xp at du setter Gainxp(Ting her for ex. int amount)
-{
-Xp = amount;
-}
-Ellers vil det ikke tell pga det er ikke en ting.
-
-while loop sjekker i dette tilfelle at xp er mer en 100 da fjerner den 100 fra counter og gir meg en level 
-
+﻿
 2.
 public bool =>Health<=0; Skrives sånn bool peker på health og sjekker om den er 0 med denne =>text<=Value;
 
@@ -13,15 +6,17 @@ public bool =>Health<=0; Skrives sånn bool peker på health og sjekker om den e
 3.
 lag ny prosjekt webapi og legg til ref via add de to forige prosj complete
 Finne ut hvorfor ikke den vil kjøre testen i testing har sjekket route har sjekket spelling og sjekke project ref at det er riktig 
-men fortsatt ingenting.
+men fortsatt ingenting. complete
 
 Lørdag.
-4. lag excalidraw og legg til i api prosjekt.
+4. lag excalidraw og legg til i api prosjekt. complete.
 
 5.fikse flere players og tester til de og upload til canvas etter og ha sjekket tests
 
 6. add in resten for ex goblin info og hvordan gjøre combat i swagger for ex.
 
+Obs viktig hvis du ikke har Build.Service<AddScoped>for playerservice i denne casen så vil testen feil pga jeg hadde singelton så den kjørte player flere ganger
+en  bare en gang added tilbake scoped så funket testet igjen og ga riktig xp reward.
 
 
 

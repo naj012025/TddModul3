@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using TddApi.Controllers;
 using TddApi.Dto;
@@ -13,12 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 //AddSingleton Lets Depenedency injection reuse playerservice.
 //Where it say addsingleton it can change to other states 
 //for example:AddTransient or AddScoped:
+//viktig for og å ikke få Errors er og legge til builderServices som player og Goblin.
 builder.Services.AddControllers();
-//builder.Services.AddSingleton<PlayerService>();
+builder.Services.AddScoped<PlayerService>();
+builder.Services.AddSingleton<GoblinService>();
 //builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<PlayerService>();
+//builder.Services.AddScoped<PlayerService>();
 
 var app = builder.Build();
 
