@@ -8,6 +8,9 @@ namespace Tests
     {
         private readonly HttpClient _client;
 
+        //Naming rule Given, When , Then and inside the brackets i do,
+        //Arrange,Act,Assert. with theory its Inlinedata.
+
         public ApiTests(WebApplicationFactory<Program> factory)
         {
             _client = factory.CreateClient();
@@ -53,6 +56,21 @@ namespace Tests
 
         }
 
-
+        [Fact]
+        public async Task GetGoblin_WhenGoblinExist_Return200Ok()
+        {
+            //Arrange
+            //Nothing to arrange
+            //Act
+            HttpResponseMessage response =
+                await _client.GetAsync("/api/goblin");
+            //Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
     }
 }
+
+
+
+
+
