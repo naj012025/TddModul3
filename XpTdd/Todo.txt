@@ -22,7 +22,7 @@ Obs Viktig når jeg added inn 404 testen måtte jeg gjøre noe endring for og la
 pga ende punktet hadde endret seg så jeg måtte endre testet til og avslutte på/999;
 
 Obs Fant ut at expression kan bli simplefied dvs i stedenfor Player player = new player trenger jeg bare og ta vekk player forhand new mindre boilerplate.
-
+OBS initalCreate for dbcontext så trenkte jeg og legge til Id med private set; pga trengte unique identifier for databasen.
 ####Docker####
 
 //OBS Viktig fant ut at jeg hadde feil pathing for automatisk docker file creation og yaml
@@ -36,6 +36,9 @@ Add EF Core + Npgsql to TddApi.
 Move player/goblin state from in-memory singleton services into PostgreSQL.
 Create migrations and update the database.
 Run the whole stack with Docker Compose.
+
+når jeg kjørt dotnet ef migrations add InitialCreate -- project TddApi --startup-project TddApi 
+så laget den en ny folder kalt migrations med 2 filer i som hører sammen.
 
 
 

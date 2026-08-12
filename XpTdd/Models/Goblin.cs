@@ -6,7 +6,7 @@ namespace XpTdd.Models
 {
     public class Goblin
     {
-        public int Id { get; }
+        public int Id { get; private set; }
         public int XpReward { get; set; }
 
         public int Health { get; set; }
