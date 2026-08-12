@@ -23,5 +23,19 @@ pga ende punktet hadde endret seg s책 jeg m책tte endre testet til og avslutte p�
 
 Obs Fant ut at expression kan bli simplefied dvs i stedenfor Player player = new player trenger jeg bare og ta vekk player forhand new mindre boilerplate.
 
+####Docker####
+
+//OBS Viktig fant ut at jeg hadde feil pathing for automatisk docker file creation og yaml
+//s책 m책tte lage det manuelt til og endre litt i file structure 
+For this assignment, the next pieces are:
+OBS !!! Super Viktig husk i port in compose.yaml hvis de ikke funker dobbelsjekk at det st책r :80 port.
+Dockerize TddApi.
+Add PostgreSQL to docker-compose.yml.
+Add pgAdmin to docker-compose.yml.
+Add EF Core + Npgsql to TddApi.
+Move player/goblin state from in-memory singleton services into PostgreSQL.
+Create migrations and update the database.
+Run the whole stack with Docker Compose.
+
 
 

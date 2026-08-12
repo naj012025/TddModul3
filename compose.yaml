@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: xptdd-postgres
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: xptdd
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/
+
+  pgadmin:
+    image: dpage/pgadmin4:9.16
+    container_name: xptdd-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@xptdd.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

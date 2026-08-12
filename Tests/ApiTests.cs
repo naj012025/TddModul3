@@ -73,7 +73,7 @@ namespace Tests
         public async Task GetGoblin_WhenGoblinDoesNotExist_Return404NotFound()
         {
             //Arrange
-            int goblinId = 999;
+            //no need to arrange anything testing for statuscode.
             //Act
             HttpResponseMessage response =
                 await _client.GetAsync("/api/goblin");
