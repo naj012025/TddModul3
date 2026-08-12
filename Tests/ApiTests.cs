@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http.Json;
 using TddApi.Dto;
+using XpTdd.Models;
 namespace Tests
 {
     public class ApiTests : IClassFixture<WebApplicationFactory<Program>>
@@ -63,7 +64,7 @@ namespace Tests
             //Nothing to arrange
             //Act
             HttpResponseMessage response =
-                await _client.GetAsync("/api/goblin");
+                await _client.GetAsync("/api/goblin/999");
             //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }

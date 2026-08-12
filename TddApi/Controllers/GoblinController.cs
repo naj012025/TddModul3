@@ -14,11 +14,14 @@ namespace TddApi.Controllers
             _goblinService = goblinService;
         }
 
-        [HttpGet]
-        public ActionResult<GoblinResponse> GetGoblin()
+        [HttpGet("{Id}")]
+        public ActionResult<GoblinResponse> GetGoblin(int id)
         {
-            GoblinResponse goblin = _goblinService.GetGoblin();
-
+            GoblinResponse? goblin = _goblinService.GetGoblin(id);
+            if (goblin is null)
+            {
+                return NotFound();
+            }
             return Ok(goblin);
         }
 

@@ -18,5 +18,10 @@ Lørdag.
 Obs viktig hvis du ikke har Build.Service<AddScoped>for playerservice i denne casen så vil testen feil pga jeg hadde singelton så den kjørte player flere ganger
 en  bare en gang added tilbake scoped så funket testet igjen og ga riktig xp reward.
 
+Obs Viktig når jeg added inn 404 testen måtte jeg gjøre noe endring for og lage en id til goblin class in this case 999 men da feilet status test 200 testen.
+pga ende punktet hadde endret seg så jeg måtte endre testet til og avslutte på/999;
+
+Obs Fant ut at expression kan bli simplefied dvs i stedenfor Player player = new player trenger jeg bare og ta vekk player forhand new mindre boilerplate.
+
 
 

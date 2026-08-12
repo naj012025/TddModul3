@@ -57,7 +57,7 @@ namespace Tests
         public void Goblin_HasCorrectXpReward()
         {
             //Arrange
-            Goblin goblin = new Goblin(25, 100);
+            Goblin goblin = new(999, 25, 100);
             //Act
 
             //Assert
@@ -68,7 +68,7 @@ namespace Tests
         public void Player_GainsKillXp_SmallAmount()
         {
             //Arrange
-            Player player = new Player();
+            Player player = new();
 
             //Act
             player.GainXp(25);
@@ -79,8 +79,8 @@ namespace Tests
         public void GainXp_OnKill_Goblin()
         {
             //Arrange
-            Player player = new Player();
-            Goblin goblin = new Goblin(25, 100);
+            Player player = new();
+            Goblin goblin = new(999, 25, 100);
             //Act
             player.GainXp(goblin.XpReward);
             //Assert
@@ -90,8 +90,8 @@ namespace Tests
         public void GainXp_KillEnoughGoblins_ToLevelUp()
         {
             //Arrange
-            Player player = new Player();
-            Goblin goblin = new Goblin(25, 100);
+            Player player = new();
+            Goblin goblin = new(999, 25, 100);
             //Act
             //for loop for og simulere 8 kills som gir 25xp per.
             for (var i = 0; i < 8; i++)
@@ -106,8 +106,8 @@ namespace Tests
         public void EquipWeapon_PlayerEquipWeapon()
         {
             //Arrange
-            Player player = new Player();
-            Weapon sword = new Weapon("Short Sword", 25);
+            Player player = new();
+            Weapon sword = new("Short Sword", 25);
             //Act
             player.EquipWeapon(sword);
             //Assert
@@ -117,9 +117,9 @@ namespace Tests
         public void Attack_UsingWeapon_GivesDamage()
         {
             //Arrange
-            Player player = new Player();
-            Goblin goblin = new Goblin(25, 100);
-            Weapon sword = new Weapon("Short Sword", 25);
+            Player player = new();
+            Goblin goblin = new(999, 25, 100);
+            Weapon sword = new("Short Sword", 25);
             player.EquipWeapon(sword);
             //Act
             player.Attack(goblin);
@@ -133,9 +133,9 @@ namespace Tests
         public void Damage_ByWeapons_GoblinIsDead()
         {
             //Arrange
-            Player player = new Player();
-            Goblin goblin = new Goblin(25, 100);
-            Weapon sword = new Weapon("UberSword", 125);
+            Player player = new();
+            Goblin goblin = new(999, 25, 100);
+            Weapon sword = new("UberSword", 125);
             player.EquipWeapon(sword);
             //Act
             player.Attack(goblin);
