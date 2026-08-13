@@ -64,7 +64,7 @@ namespace Tests
             //Nothing to arrange
             //Act
             HttpResponseMessage response =
-                await _client.GetAsync("/api/goblin/999");
+                await _client.GetAsync("/api/goblin");
             //Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }

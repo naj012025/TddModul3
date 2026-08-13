@@ -14,19 +14,27 @@ namespace TddApi.Controllers
             _goblinService = goblinService;
         }
 
-        [HttpGet("{Id}")]
-        public ActionResult<GoblinResponse> GetGoblin(int id)
+        //[HttpGet("{Id}")]
+        //public ActionResult<GoblinResponse> GetGoblin(int id)
+        //{
+        //    GoblinResponse? goblin = _goblinService.GetGoblin(id);
+        //    if (goblin is null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(goblin);
+        //}
+
+
+        [HttpPost]
+        public async Task<ActionResult<GoblinResponse>> CreateGoblin(
+            CreateGoblinRequest request)
         {
-            GoblinResponse? goblin = _goblinService.GetGoblin(id);
-            if (goblin is null)
-            {
-                return NotFound();
-            }
+            GoblinResponse goblin =
+                await _goblinService.CreateGoblinAsync(request);
+
             return Ok(goblin);
         }
-
-        //[HttpPost("Give-Xp")]
-        //public ActionResult<GoblinRequest>
     }
 
 }

@@ -11,10 +11,10 @@ namespace XpTdd.Models
         public int Damage { get; set; }
 
 
-        public Weapon(int id, string name, int damage)
+        public Weapon(string name, int damage)
         {
 
-            Id = id;
+
             Name = name;
             Damage = damage;
         }

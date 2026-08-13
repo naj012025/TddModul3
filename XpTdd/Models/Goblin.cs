@@ -6,6 +6,7 @@ namespace XpTdd.Models
 {
     public class Goblin
     {
+        //Hadde id i constructor men tok den ut av pga skal bruke sql og den tar seg av id.
         public int Id { get; private set; }
         public int XpReward { get; set; }
 
@@ -13,9 +14,9 @@ namespace XpTdd.Models
 
         public bool Isdead => Health <= 0;
 
-        public Goblin(int id, int xpReward, int health)
+        public Goblin(int xpReward, int health)
         {
-            Id = id;
+
             XpReward = xpReward;
             Health = health;
         }

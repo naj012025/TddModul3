@@ -57,7 +57,7 @@ namespace Tests
         public void Goblin_HasCorrectXpReward()
         {
             //Arrange
-            Goblin goblin = new(999, 25, 100);
+            Goblin goblin = new(25, 100);
             //Act
 
             //Assert
@@ -80,7 +80,7 @@ namespace Tests
         {
             //Arrange
             Player player = new();
-            Goblin goblin = new(999, 25, 100);
+            Goblin goblin = new(25, 100);
             //Act
             player.GainXp(goblin.XpReward);
             //Assert
@@ -91,7 +91,7 @@ namespace Tests
         {
             //Arrange
             Player player = new();
-            Goblin goblin = new(999, 25, 100);
+            Goblin goblin = new(25, 100);
             //Act
             //for loop for og simulere 8 kills som gir 25xp per.
             for (var i = 0; i < 8; i++)
@@ -118,7 +118,7 @@ namespace Tests
         {
             //Arrange
             Player player = new();
-            Goblin goblin = new(999, 25, 100);
+            Goblin goblin = new(25, 100);
             Weapon sword = new("Short Sword", 25);
             player.EquipWeapon(sword);
             //Act
@@ -134,7 +134,7 @@ namespace Tests
         {
             //Arrange
             Player player = new();
-            Goblin goblin = new(999, 25, 100);
+            Goblin goblin = new(25, 100);
             Weapon sword = new("UberSword", 125);
             player.EquipWeapon(sword);
             //Act
