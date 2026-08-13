@@ -6,11 +6,13 @@ using TddApi.Services;
 using XpTdd.Models;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
 builder.Services.AddScoped<PlayerService>();
 builder.Services.AddScoped<GoblinService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(
@@ -21,6 +23,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.MapHealthChecks("/health");
     app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
