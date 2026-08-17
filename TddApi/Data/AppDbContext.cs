@@ -10,6 +10,8 @@ public class AppDbContext : DbContext
 
     }
     // lager to tables
+    public DbSet<Weapon> Weapons { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Goblin> Goblins { get; set; }
+    public DbSet<User> Users { get; set; }
 }

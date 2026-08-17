@@ -1,0 +1,9 @@
+﻿namespace TddApi.Dto
+{
+    public class LoginRequest
+    {
+        //ask why not id in Dto?
+        public string UserName { get; set; } = string.Empty;
+        public string HashedPassword { get; set; } = string.Empty;
+    }
+}

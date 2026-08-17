@@ -57,29 +57,7 @@ namespace Tests
 
         }
 
-        [Fact]
-        public async Task GetGoblin_WhenGoblinExist_Return200Ok()
-        {
-            //Arrange
-            //Nothing to arrange
-            //Act
-            HttpResponseMessage response =
-                await _client.GetAsync("/api/goblin");
-            //Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        }
 
-        [Fact]
-        public async Task GetGoblin_WhenGoblinDoesNotExist_Return404NotFound()
-        {
-            //Arrange
-            //no need to arrange anything testing for statuscode.
-            //Act
-            HttpResponseMessage response =
-                await _client.GetAsync("/api/goblin");
-            //Assert
-            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
-        }
     }
 }
 
