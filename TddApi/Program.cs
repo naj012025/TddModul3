@@ -13,13 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
+builder.Services.AddAuthorization();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<PlayerService>();
 builder.Services.AddScoped<GoblinService>();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddAuthorization();
-builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<AuthService>();
 
 
 
@@ -47,12 +48,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-//må nok lage en egen class for
-//denne du har laget en haasher før sjekk den
-_passwordHasher.VerifyHashedPassword(
-    user,
-    user.PasswordHash,
-    request.Password);
 
 
 var app = builder.Build();
@@ -73,7 +68,18 @@ app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapControllers();
 
+//User user = new()
+//{
+//    UserName = "testuser"
+//};
+
+//PasswordHasher<User> hasher = new();
+
+//string hash = hasher.HashPassword(user, "password123");
+
 app.Run();
+//Console.WriteLine(hash);
+
 
 //This public partial class makes it so im able to use the tests.
 //it can stay forever has no effect on slowing down the program.

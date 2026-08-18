@@ -51,4 +51,13 @@ Spesielt oppsett av Docker og pgAdmin var noe jeg måtte få bedre kontroll på.
 
 ---
 
+### Addendum Lærte
+
+Fikk gjort Token Security igjen Lerte mye på dagens Tema ifra timen om tokens og ble guided igjennom setup via chatgpt der oppstod the mange spørsmål 
+som jeg fant svarene på har også laget en huskelist på lese mer på Syntax setup av hashing av passord og mer om token setup på api oppgaven og generelt 
+api securitysetup.
+
+###Ting jeg ønsker at jeg fikset tidligere igjenn som øverst fokuserte på modulen som komm etter denne så gjorde lite rest api arbeid der mer tcp for
+chat etc i fordypningsoppgavene. 
+
 *Teksten er skrevet av meg. ChatGPT er kun brukt til språklig redigering, retting av skrivefeil og forbedring av tekststruktur.* 433 ord soz.
