@@ -14,3 +14,4 @@ player i begge testene når jeg brukte singleton så fikk alt for mye
 xp i test så den feilet.
 
 Hadde Feil med swagger pga jeg hadde bare installert swagger core uten swagger ui.
+

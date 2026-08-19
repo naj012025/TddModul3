@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
 using System.Text;
 using TddApi.Data;
 using TddApi.Services;
@@ -15,12 +16,25 @@ builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<PlayerService>();
 builder.Services.AddScoped<GoblinService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter your JWT Token quikc they are coming!, "
+    });
+}); //viktig fikk error jeg manglet disse,
+    //tenkte ikke over at the det er nested så måtte lukke begge.
+
 
 
 
@@ -68,6 +82,7 @@ app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapControllers();
 
+app.Run();
 //User user = new()
 //{
 //    UserName = "testuser"
@@ -77,7 +92,7 @@ app.MapControllers();
 
 //string hash = hasher.HashPassword(user, "password123");
 
-app.Run();
+
 //Console.WriteLine(hash);
 
 

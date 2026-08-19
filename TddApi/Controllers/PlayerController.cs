@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TddApi.Dto;
 using TddApi.Services;
 namespace TddApi.Controllers
@@ -16,8 +17,9 @@ namespace TddApi.Controllers
             _playerService = playerService;
         }
         //hadde glemt og legge til "gain-xp" i samme line som httppost i parantes 
+        [Authorize]
         [HttpPost("gain-xp")]
-        public ActionResult<PlayerResponse> GainXp(GainXpRequest request)
+        public async Task<ActionResult<PlayerResponse>> GainXp(GainXpRequest request)
         {
             // <=0; betyr less than eller er lik 0 
             if (request.Amount <= 0)

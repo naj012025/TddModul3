@@ -40,5 +40,9 @@ Run the whole stack with Docker Compose.
 når jeg kjørt dotnet ef migrations add InitialCreate -- project TddApi --startup-project TddApi 
 så laget den en ny folder kalt migrations med 2 filer i som hører sammen.
 
+Onsdag:
+Finne ut hvorfor login ikke funker 
 
+Legg til sånn at users kan han sin seperat xp increase 
+.
 
