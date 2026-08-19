@@ -6,24 +6,9 @@ namespace TddApi.Services
 {
     public class GoblinService
     {
-        //magic numbrs are xp, health.
+        //magic numbers are xp, health. in the future i want have less magic numbers because i would forget what they are.
         //private readonly Goblin _goblin = new(25, 100);
         private readonly AppDbContext _dbContext;
-        //public GoblinResponse? GetGoblin(int id)
-        //{
-        //    if (_goblin.Id != id)
-        //    {
-        //        return null;
-        //    }
-
-        //    return new GoblinResponse
-        //    {
-        //        Id = _goblin.Id, // potential error.
-        //        Health = _goblin.Health,
-        //        XpReward = _goblin.XpReward,
-        //        IsDead = _goblin.Isdead
-        //    };
-        //}
 
         public GoblinService(AppDbContext dbContext)
         {

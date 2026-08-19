@@ -10,7 +10,8 @@ namespace Tests
         private readonly HttpClient _client;
 
         //Naming rule Given, When , Then and inside the brackets i do,
-        //Arrange,Act,Assert. with theory its Inlinedata.
+        //Arrange,Act,Assert.
+        //with theory its Inlinedata.
 
         public ApiTests(WebApplicationFactory<Program> factory)
         {

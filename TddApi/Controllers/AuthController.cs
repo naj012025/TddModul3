@@ -2,6 +2,8 @@
 using TddApi.Dto;
 using TddApi.Services;
 
+
+
 [ApiController]
 [Route("api/auth")]
 public class AuthController : ControllerBase
@@ -25,5 +27,18 @@ public class AuthController : ControllerBase
         }
 
         return Ok(response);
+    }
+
+    [HttpPost("register")]
+    public async Task<IActionResult> Register(RegisterRequest request)
+    {
+        bool success = await _authService.RegisterAsync(request);
+
+        if (!success)
+        {
+            return Conflict("Username already Exists!");
+        }
+
+        return Ok();
     }
 }

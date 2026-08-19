@@ -30,10 +30,11 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Enter your JWT Token quikc they are coming!, "
+        Description = "Enter your JWT Token quick they are coming!, "
     });
-}); //viktig fikk error jeg manglet disse,
-    //tenkte ikke over at the det er nested så måtte lukke begge.
+}); //Important i had error beacause of missing These
+    // Figured out after i added them its beacuse its nested inside the addswagger gen
+    // so needs one for outside and one for inside
 
 
 
@@ -71,7 +72,6 @@ if (app.Environment.IsDevelopment())
 {
 
     app.MapHealthChecks("/health");
-    app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
 
@@ -83,6 +83,9 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
+
+//Temp Hash i need to run for first seed.
+
 //User user = new()
 //{
 //    UserName = "testuser"
@@ -98,9 +101,10 @@ app.Run();
 
 //This public partial class makes it so im able to use the tests.
 //it can stay forever has no effect on slowing down the program.
+
 //public partial class Program
 //{
-//    //Denne partial Class er unødvenig i nyere Dotnet
+//    //This partial class is not required in the newer dotnets i learned.
 //}
 
 

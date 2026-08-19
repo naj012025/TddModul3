@@ -14,7 +14,7 @@ namespace Tests
             //Act
             player.GainXp(50);
             //Assert
-            Assert.Equal(50, player.Xp); //red
+            Assert.Equal(50, player.Xp);
 
         }
 
@@ -50,7 +50,7 @@ namespace Tests
             //Act
             player.GainXp(250);
             //Assert
-            Assert.Equal(3, player.Level);// will fail beacuse he will be lvl 3
+            Assert.Equal(3, player.Level);
             Assert.Equal(50, player.Xp);
         }
         [Fact]
@@ -93,7 +93,7 @@ namespace Tests
             Player player = new();
             Goblin goblin = new(25, 100);
             //Act
-            //for loop for og simulere 8 kills som gir 25xp per.
+            //For loop to simulate 8 kills that gives 25xp each.
             for (var i = 0; i < 8; i++)
             {
                 player.GainXp(goblin.XpReward);

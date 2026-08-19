@@ -6,7 +6,7 @@ namespace XpTdd.Models
 {
     public class Goblin
     {
-        //Hadde id i constructor men tok den ut av pga skal bruke sql og den tar seg av id.
+        //Had id in constructor but tok it away Beacuse the Sql will take care of it later.
         public int Id { get; private set; }
         public int XpReward { get; set; }
 

@@ -4,7 +4,7 @@ namespace TddApi.Services
 {
     public class PlayerService
     {
-        //_player understrek foran er pga er private standard praksis.
+        //_player Underscore on private standard Convention
         private readonly Player _player = new();
 
         public Player GetPlayer()

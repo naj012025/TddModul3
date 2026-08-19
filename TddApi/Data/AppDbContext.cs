@@ -9,7 +9,7 @@ public class AppDbContext : DbContext
     {
 
     }
-    // lager to tables
+    // Makes two Tables in Database. was planning making more but for assignment it was not needed hence weapons and players have no refs.
     public DbSet<Weapon> Weapons { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Goblin> Goblins { get; set; }

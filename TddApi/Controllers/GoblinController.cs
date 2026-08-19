@@ -8,12 +8,14 @@ namespace TddApi.Controllers
     public class GoblinController : ControllerBase
     {
         private readonly GoblinService _goblinService;
-        //må ha samme navn som class.
+        //Needs to have same name as class added this comment so i write it out to remmber it better.
         public GoblinController(GoblinService goblinService)
         {
             _goblinService = goblinService;
         }
 
+
+        //was for a test but it was not needed for assignment i keep this here for refrence later.
         //[HttpGet("{Id}")]
         //public ActionResult<GoblinResponse> GetGoblin(int id)
         //{

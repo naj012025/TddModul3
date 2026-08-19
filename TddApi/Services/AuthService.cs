@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Security;
-using System.Security.Cryptography;
 using TddApi.Data;
 using TddApi.Dto;
 using XpTdd.Models;
@@ -51,6 +49,30 @@ namespace TddApi.Services
             {
                 Token = token
             };
+        }
+
+        public async Task<bool> RegisterAsync(RegisterRequest request)
+        {
+            bool userExists = await _dbContext.Users.
+                AnyAsync(u => u.UserName == request.UserName);
+
+            if (userExists)
+            {
+                return false;
+            }
+
+            User user = new()
+            {
+                UserName = request.UserName
+            };
+
+            user.PasswordHash = _passwordHasher.HashPassword(user, request.Password);
+
+            _dbContext.Users.Add(user);
+
+            await _dbContext.SaveChangesAsync();
+
+            return true;
         }
 
 
