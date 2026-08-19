@@ -25,8 +25,4 @@
     <ProjectReference Include="..\XpTdd\XpTdd.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Excalidraw\" />
-  </ItemGroup>
-
 </Project>
